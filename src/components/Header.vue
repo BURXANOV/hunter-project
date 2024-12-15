@@ -73,7 +73,7 @@
               alt="Search"
             />
             <input
-              class="p-3 bg-yellow-600 text-black hover:bg-slate-100 bg-opacity-20 border-2 rounded-xl w-full xs:w-[200px] sm:w-[300px] md:w-[500px]"
+              class="p-3 bg-yellow-600 text-black hover:bg-slate-100 hover:-translate-y-2 hover:shadow-xl bg-opacity-20 border-2 rounded-xl w-full xs:w-[200px] sm:w-[300px] md:w-[500px]"
               placeholder="Поиск"
               type="text"
             />
@@ -140,7 +140,21 @@
             placeholder="Поиск"
           />
         </div>
-        <img class="w-14 h-14 cursor-pointer" src="/frame.svg" alt="" />
+        <img
+          id="cartImg"
+          class="w-14 h-14 cursor-pointer"
+          src="/frame.svg"
+          alt="Корзина"
+        />
+        <div
+          id="cart"
+          class="cart hidden fixed top-0 left-[-300px] w-[300px] h-full bg-gray-100 shadow-lg transition-all duration-300 z-50"
+        >
+          <div class="p-4">
+            <h2 class="text-lg font-bold">Корзина</h2>
+            <p>Ваша корзина пуста.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
