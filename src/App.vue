@@ -2,11 +2,13 @@
 import router from "./router/inde";
 import Header from "./components/Header.vue";
 import Liquidation from "./components/Liquidation.vue";
+import Partner from "./components/Partner.vue";
 </script>
 <template>
   <div class="">
     <Header />
-    <!-- <Liquidation /> -->
+    <Liquidation />
+    <Partner />
   </div>
 </template>
 
