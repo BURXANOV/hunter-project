@@ -1,12 +1,22 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import Cartmod from "./cart/Cartmod.vue";
+import Footer from "./Footer.vue";
+const isOpen = ref(false);
+
+const openModal = () => {
+  isOpen.value = true;
+};
+
+const closeModal = () => {
+  isOpen.value = false;
+};
+</script>
+
 <template>
-  <div>
+  <header>
     <div
       class="header hidden md:block w-full min-h-[200px] bg-cover flex flex-col justify-between"
-      style="
-        background-image: url('/image1.svg'), url('/image2.svg');
-        background-position: left, right;
-      "
     >
       <div class="w-full px-4 md:px-20">
         <div
@@ -16,146 +26,91 @@
             class="flex flex-wrap gap-4 md:gap-10 text font-bold text-sm uppercase"
           >
             <li>
-              <router-link class="hover:text-yellow-600" href="/"
+              <router-link class="hover:text-yellow-600" to="/"
                 >Главная</router-link
               >
             </li>
-            <li>
-              <router-link class="hover:text-yellow-600" href="/"
+            <li class="fle-col flex items-center justify-center">
+              <router-link class="hover:text-yellow-600" to="/activ"
                 >Каталог</router-link
               >
             </li>
             <li>
-              <router-link class="hover:text-yellow-600" href="/"
+              <router-link class="hover:text-yellow-600" to="/about"
                 >О нас</router-link
               >
             </li>
             <li>
-              <router-link class="hover:text-yellow-600" href="/"
+              <router-link class="hover:text-yellow-600" to="/blog"
                 >Блог</router-link
               >
             </li>
             <li>
-              <router-link class="hover:text-yellow-600" href="/"
+              <router-link class="hover:text-yellow-600" to="/contacts"
                 >Контакты</router-link
               >
             </li>
           </ul>
 
-          <ul class="flex flex-wrap gap-6 items-center">
+          <ul class="flex gap-6 items-center">
             <li>
               <b>09:00-21:00</b>
               <h1>по Кр</h1>
             </li>
-            <div
+            <li
               class="hidden md:block border-2 border-slate-400 rounded-sm h-10"
-            ></div>
-            <li class="text-center">
+            ></li>
+            <li>
               <b>0500-000-000</b>
               <h2>Заказать</h2>
             </li>
           </ul>
         </div>
-
-        <div class="border-t border-gray-700 mt-4"></div>
       </div>
 
       <div
         class="flex flex-wrap items-center justify-between px-4 md:px-20 py-6"
       >
-        <img src="/1296670.svg" width="100" height="100" alt="img" />
-
+        <img src="/1296670.svg" width="100" height="100" alt="Logo" />
         <div class="flex xs:flex-col-reverse gap-6 md:gap-14 items-center">
-          <div class="relative w-full md:w-auto">
-            <img
-              class="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2"
-              src="/search.svg"
-              alt="Search"
-            />
-            <input
-              class="p-3 bg-yellow-600 text-black hover:bg-slate-100 hover:-translate-y-2 hover:shadow-xl bg-opacity-20 border-2 rounded-xl w-full xs:w-[200px] sm:w-[300px] md:w-[500px]"
-              placeholder="Поиск"
-              type="text"
-            />
-          </div>
-
-          <div class="flex gap-6 items-center justify-center">
+          <input
+            class="p-3 bg-black-100 text-black hover:bg-slate-100 border-2 rounded-xl w-full xs:w-[200px] md:w-[500px]"
+            placeholder="Поиск"
+            type="text"
+          />
+          <div class="flex gap-6 items-center">
             <ul class="flex gap-6">
-              <li class="flex flex-col items-center">
+              <li>
                 <img src="/user.svg" alt="User" class="w-6 h-6" />
-                <p class="text-center text-sm">Войти</p>
+                <p>Войти</p>
               </li>
-              <li class="flex flex-col items-center">
+              <li>
                 <img src="/like.svg" alt="Like" class="w-6 h-6" />
-                <p class="text-center text-sm">Избранное</p>
+                <p>Избранное</p>
               </li>
-              <li class="flex flex-col items-center">
-                <img src="/cart.svg" alt="Cart" class="w-6 h-6" />
-                <p class="text-center text-sm">Корзинка</p>
+              <li>
+                <img
+                  @click="openModal"
+                  src="/cart.svg"
+                  alt="Cart"
+                  class="w-6 h-6 cursor-pointer"
+                />
+                <p>Корзина</p>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div
-      style="
-        background-image: url('/Rectangle 43.png');
-        background-position: center;
-        width: full;
-      "
-      class="block md:hidden w-full bg-cover h-screen bg-no-repeat bg-bottom"
-    >
-      <div class="justify-between p-5 flex">
-        <img
-          class="filter cursor-pointer invert"
-          src="/1296670.svg"
-          width="80"
-          height="80"
-          alt=""
-        />
-        <ul class="flex items-center gap-5 justify-between p-5">
-          <li
-            class="flex cursor-pointer flex-col text-white text-12 items-center"
-          >
-            <img class="filter invert w-7 h-7" src="/user.svg" alt="" />
-            <p>Войти</p>
-          </li>
-          <li class="flex cursor-pointer flex-col text-white items-center">
-            <img class="filter invert w-7 h-7" src="/like.svg" alt="" />
-            <p>Избранное</p>
-          </li>
-          <li class="flex cursor-pointer flex-col text-white items-center">
-            <img class="filter invert w-7 h-7" src="/cart.svg" alt="" />
-            <p>Корзина</p>
-          </li>
-        </ul>
-      </div>
-      <div class="flex justify-between pl-5 pr-5 items-center">
-        <div class="relative">
-          <img class="absolute right-2 top-2" src="/search.svg" alt="img" />
-          <input
-            class="border opacity-20 hover:opacity-40 p-2 rounded-xl w-auto"
-            type="text"
-            placeholder="Поиск"
-          />
-        </div>
-        <img
-          id="cartImg"
-          class="w-14 h-14 cursor-pointer"
-          src="/frame.svg"
-          alt="Корзина"
-        />
-        <div
-          id="cart"
-          class="cart hidden fixed top-0 left-[-300px] w-[300px] h-full bg-gray-100 shadow-lg transition-all duration-300 z-50"
-        >
-          <div class="p-4">
-            <h2 class="text-lg font-bold">Корзина</h2>
-            <p>Ваша корзина пуста.</p>
-          </div>
-        </div>
-      </div>
+    <div class="block sm:hidden">adfafsa</div>
+  </header>
+
+  <div
+    v-if="isOpen"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+  >
+    <div>
+      <Cartmod />
     </div>
   </div>
 </template>

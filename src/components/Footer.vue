@@ -1,9 +1,9 @@
 <template>
   <div
-    class="bg-cover bg-no-repeat bg-center"
+    class="bg-cover max-h-[300px] bg-no-repeat bg-center"
     style="background-image: url('/footer.png'); height: 100vh"
   >
-    <div class="pt-40 space-y-3">
+    <div class="pt-10 space-y-3">
       <p class="flex items-center justify-center text-4xl font-bold">Logo</p>
       <h2 class="flex justify-center text-2xl items-center">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam ad tenetur
