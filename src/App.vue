@@ -1,5 +1,5 @@
 <script setup>
-import router from "./router/inde";
+import router from "./router";
 import Header from "./components/Header.vue";
 import Liquidation from "./components/Liquidation.vue";
 import Partner from "./components/Partner.vue";
@@ -13,22 +13,16 @@ import Product from "./components/Product.vue";
 import Cart from "./components/Cart.vue";
 import CartItem from "./components/CartItem.vue";
 import CartModal from "./components/cart/CartModal.vue";
+import Cartmod from "./components/cart/Cartmod.vue";
 </script>
 <template>
-  <div class="">
-    <Header />
+  <div class="app-container">
+    
 
-    <Cart />
-
-    <!-- <Category /> -->
-    <!-- <Activ /> -->
-    <!-- <Liquidation />
-
-    <Partner />
-    <Discount />
-    <Blog />
-    <Populr />
-    <Footer /> -->
+    <main class="main-content">
+      <router-view />
+    </main>
+    
   </div>
 </template>
 
