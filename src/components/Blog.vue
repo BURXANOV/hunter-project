@@ -1,5 +1,7 @@
 <script setup>
 import router from "@/router";
+import Header from "./Header.vue";
+import Footer from "./Footer.vue";
 const items = [
   {
     id: 1,
@@ -53,35 +55,37 @@ const items = [
 </script>
 
 <template>
-  <div
-    class="flex items-center justify-center min-h-screen bg-cover bg-center"
-    style="background-image: url('/cart3.svg')"
-  >
-    <div class="max-w-[1240px] w-full p-5">
-      <div class="flex gap-4 items-center mb-8">
-        <p class="text-xl font-semibold">Блог</p>
-        <button
-          class="text-lg font-semibold text-gray-600 hover:text-black transition"
-        >
-          &gt;
-        </button>
-      </div>
+  <div>
+    <div
+      class="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style="background-image: url('/cart3.svg')"
+    >
+      <div class="max-w-[1240px] w-full p-5">
+        <div class="flex gap-4 items-center mb-8">
+          <p class="text-xl font-semibold">Блог</p>
+          <button
+            class="text-lg font-semibold text-gray-600 hover:text-black transition"
+          >
+            &gt;
+          </button>
+        </div>
 
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
-      >
         <div
-          v-for="item in items"
-          :key="item.id"
-          class="bg-white shadow-md rounded-lg overflow-hidden p-4 text-center"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
         >
-          <img
-            :src="item.imgSrc"
-            alt="item image"
-            class="w-full h-[200px] object-cover rounded-md mb-4"
-          />
-          <p class="text-lg font-bold text-gray-800">{{ item.name }}</p>
-          <h1 class="text-sm text-gray-600">{{ item.title }}</h1>
+          <div
+            v-for="item in items"
+            :key="item.id"
+            class="bg-white shadow-md rounded-lg overflow-hidden p-4 text-center"
+          >
+            <img
+              :src="item.imgSrc"
+              alt="item image"
+              class="w-full h-[200px] object-cover rounded-md mb-4"
+            />
+            <p class="text-lg font-bold text-gray-800">{{ item.name }}</p>
+            <h1 class="text-sm text-gray-600">{{ item.title }}</h1>
+          </div>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ const closeModal = () => {
               >
             </li>
             <li class="fle-col flex items-center justify-center">
-              <router-link class="hover:text-yellow-600" to="/activ"
+              <router-link class="hover:text-yellow-600" to="/category"
                 >Каталог</router-link
               >
             </li>
@@ -43,11 +43,6 @@ const closeModal = () => {
             <li>
               <router-link class="hover:text-yellow-600" to="/blog"
                 >Блог</router-link
-              >
-            </li>
-            <li>
-              <router-link class="hover:text-yellow-600" to="/contacts"
-                >Контакты</router-link
               >
             </li>
           </ul>
@@ -80,15 +75,18 @@ const closeModal = () => {
           />
           <div class="flex gap-6 items-center">
             <ul class="flex gap-6">
-              <li>
+              <router-link
+                to="/signup"
+                class="flex flex-col items-center cursor-pointer"
+              >
                 <img src="/user.svg" alt="User" class="w-6 h-6" />
                 <p>Войти</p>
-              </li>
-              <li>
+              </router-link>
+              <li class="flex flex-col cursor-pointer items-center">
                 <img src="/like.svg" alt="Like" class="w-6 h-6" />
                 <p>Избранное</p>
               </li>
-              <li>
+              <li class="flex flex-col cursor-pointer items-center">
                 <img
                   @click="openModal"
                   src="/cart.svg"

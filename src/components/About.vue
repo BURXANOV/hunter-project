@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="p-24">
       <div class="gap-5 flex">
         <router-link to="/">Главная</router-link>
@@ -22,7 +21,6 @@
         />
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 <script setup>

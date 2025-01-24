@@ -17,12 +17,11 @@ import Cartmod from "./components/cart/Cartmod.vue";
 </script>
 <template>
   <div class="app-container">
-    
-
     <main class="main-content">
+      <Header />
       <router-view />
+      <Footer />
     </main>
-    
   </div>
 </template>
 

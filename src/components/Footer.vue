@@ -1,5 +1,6 @@
 <template>
   <div
+    id="home"
     class="bg-cover max-h-[300px] bg-no-repeat bg-center"
     style="background-image: url('/footer.png'); height: 100vh"
   >

@@ -10,11 +10,23 @@ import Category from "@/components/Category.vue";
 import Blog from "@/components/Blog.vue";
 import Home from "@/Home.vue";
 import About from "@/components/About.vue";
+import SignUp from "@/components/sign/SignUp.vue";
+import Signin from "@/components/sign/Signin.vue";
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/signin",
+    name: "SignIn",
+    component: Signin,
+  },
+  {
+    path: "/signup",
+    name: "SignUp",
+    component: SignUp,
   },
   {
     path: "/about",

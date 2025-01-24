@@ -1,13 +1,11 @@
 <template>
   <div>
-    <Header />
     <Liquidation />
     <Partner />
     <Discount />
     <Blog />
 
     <Populr />
-    <Footer />
   </div>
 </template>
 <script setup>

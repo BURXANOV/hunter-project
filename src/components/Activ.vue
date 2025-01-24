@@ -3,6 +3,7 @@
     <p class="text-xl font-bold mb-6">Популярные категории</p>
 
     <button
+      @close="closeActiv"
       class="flex items-center text-2xl font-bold h-[50px] p-4 border rounded-full shadow-xl w-[50px]"
     >
       x
